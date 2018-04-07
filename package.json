@@ -6,9 +6,29 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "test": "jest --config jest/test.config.js",
+    "lint": "jest --config jest/tslint.config.js",
+    "e2e": "ng e2e",
+    "precommit": "lint-staged",
+    "prepush": "yarn test && yarn lint"
+  },
+  "lint-staged": {
+    "*.ts": ["tslint --fix", "import-sort --write", "git add"],
+    "*.{md,json,js}": ["prettier --write"]
+  },
+  "importSort": {
+    ".ts": {
+      "parser": "typescript",
+      "style": "module"
+    }
+  },
+  "jest": {
+    "preset": "jest-preset-angular",
+    "setupTestFrameworkScriptFile": "<rootDir>/jest/setup.ts"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingCommas": "es5"
   },
   "private": true,
   "dependencies": {
@@ -33,16 +53,27 @@
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
     "codelyzer": "^4.0.1",
+    "husky": "^0.14.3",
+    "import-sort-cli": "^4.2.0",
+    "import-sort-parser-typescript": "^4.2.0",
+    "import-sort-style-module": "^4.2.0",
     "jasmine-core": "~2.8.0",
     "jasmine-spec-reporter": "~4.2.1",
+    "jest": "^22.4.3",
+    "jest-preset-angular": "^5.2.1",
+    "jest-runner-tslint": "^1.0.4",
     "karma": "~2.0.0",
     "karma-chrome-launcher": "~2.2.0",
     "karma-coverage-istanbul-reporter": "^1.2.1",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "lint-staged": "^7.0.4",
+    "prettier": "^1.11.1",
+    "prettier-tslint": "^0.3.0",
     "protractor": "~5.1.2",
     "ts-node": "~4.1.0",
     "tslint": "~5.9.1",
+    "tslint-config-prettier": "^1.10.0",
     "typescript": "~2.5.3"
   }
 }
