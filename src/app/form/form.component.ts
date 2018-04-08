@@ -3,7 +3,7 @@ import { Store, select } from '@ngrx/store';
 import { FormGroupState } from 'ngrx-forms';
 import { ConnectService } from 'ngrx-query';
 import { Observable } from 'rxjs/Observable';
-import { map, tap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 import { FormState, GetUserEmail } from '../modules/form';
 import { createFakerQuery } from '../queries';
@@ -26,7 +26,6 @@ export class FormComponent implements OnInit {
     this.form = store.select(s => s.form);
     this.user = store.pipe(
       select(s => s.entities.persons),
-      tap(persons => console.log(persons)),
       map(persons => persons[this.id])
     );
   }

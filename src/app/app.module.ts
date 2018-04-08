@@ -50,7 +50,6 @@ import { routes } from './routes';
     }),
   ],
   providers: [{ provide: RouterStateSerializer, useClass: CustomSerializer }],
-
   bootstrap: [AppComponent],
 })
 export class AppModule {}
