@@ -2,26 +2,24 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
 
-## Development server
+## ngrx
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+`ngrx` is used for state management, additionally the following packages are used:
 
-## Code scaffolding
+* `@ngrx/store` the actual store;
+* `@ngrx/effects` for side effects;
+* `@ngrx/router-store` to hook up the router to the store;
+* `@ngrx/store-devtools` to get Redux Devtools support;
+* `ngrx-forms` to hook up your forms with ngrx;
+* `ngrx-query` for better query management via `redux-query`;
+* `ngrx-store-freeze` to ensure that no modifications are done to the store when developing;
+* `ngrx-store-localstorage` to persist data and entities;
+* `ngrx-store-logger` to log what is happening;
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## the plusplus parts
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* `jest` is used to run tests as it is faster and just better than `karma`;
+* `prettierjs` to format all code;
+* `husky` to for git-hooks to ensure formatting and tests passing;
+* `lint-staged` to run tests and format files;
+* `jest-runner-tslint` to run `tslint` via `jest`.
