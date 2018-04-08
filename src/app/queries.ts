@@ -1,4 +1,4 @@
-import { ConnectRequestParams, RequestParams } from 'ngrx-query';
+import { ConnectRequestParams } from 'ngrx-query';
 
 import { AppState } from './reducers';
 

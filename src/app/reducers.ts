@@ -2,7 +2,6 @@ import { Params, RouterStateSnapshot } from '@angular/router';
 import {
   RouterReducerState,
   RouterStateSerializer,
-  StoreRouterConnectingModule,
   routerReducer,
 } from '@ngrx/router-store';
 import { ActionReducer, ActionReducerMap, MetaReducer } from '@ngrx/store';
@@ -35,8 +34,8 @@ export const initialState = {
   entities: { persons: {} },
 };
 
-export const queriesSelector = state => state.queries;
-export const entitiesSelector = state => state.entities;
+export const queriesSelector = (state: AppState) => state.queries;
+export const entitiesSelector = (state: AppState) => state.entities;
 
 export const metaReducers: MetaReducer<AppState>[] = !environment.production
   ? [storeLogger(), storeFreeze, storageReducer]

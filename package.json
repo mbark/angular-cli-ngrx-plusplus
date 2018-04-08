@@ -14,7 +14,7 @@
   },
   "lint-staged": {
     "*.ts": ["tslint --fix", "import-sort --write", "git add"],
-    "*.{md,json,js}": ["prettier --write"]
+    "*.{md,json,js}": ["prettier --write", "git add"]
   },
   "importSort": {
     ".ts": {
@@ -53,7 +53,7 @@
     "ngrx-store-localstorage": "^5.0.0",
     "ngrx-store-logger": "^0.2.1",
     "rxjs": "^5.5.6",
-    "zone.js": "^0.8.19"
+    "zone.js": "^0.8.26"
   },
   "devDependencies": {
     "@angular/cli": "~1.7.4",
@@ -61,7 +61,7 @@
     "@angular/language-service": "^5.2.0",
     "@types/jasmine": "~2.8.3",
     "@types/jasminewd2": "~2.0.2",
-    "@types/node": "~6.0.60",
+    "@types/node": "~9.6.2",
     "codelyzer": "^4.0.1",
     "husky": "^0.14.3",
     "import-sort-cli": "^4.2.0",
@@ -80,10 +80,10 @@
     "lint-staged": "^7.0.4",
     "prettier": "^1.11.1",
     "prettier-tslint": "^0.3.0",
-    "protractor": "~5.1.2",
-    "ts-node": "~4.1.0",
+    "protractor": "~5.3.1",
+    "ts-node": "~5.0.1",
     "tslint": "~5.9.1",
     "tslint-config-prettier": "^1.10.0",
-    "typescript": "~2.5.3"
+    "typescript": "~2.8.1"
   }
 }

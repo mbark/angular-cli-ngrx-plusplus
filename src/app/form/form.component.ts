@@ -3,9 +3,9 @@ import { Store, select } from '@ngrx/store';
 import { FormGroupState } from 'ngrx-forms';
 import { ConnectService } from 'ngrx-query';
 import { Observable } from 'rxjs/Observable';
-import { filter, map, tap } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 
-import { FormState, GetUserEmail, SetUserEmail } from '../modules/form';
+import { FormState, GetUserEmail } from '../modules/form';
 import { createFakerQuery } from '../queries';
 import { AppState } from '../reducers';
 

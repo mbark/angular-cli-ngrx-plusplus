@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Actions, Effect, ofType } from '@ngrx/effects';
+import { Actions, Effect } from '@ngrx/effects';
 import { Action } from '@ngrx/store';
 import {
   FormGroupState,
@@ -12,8 +12,6 @@ import {
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { catchError, filter, map, mergeMap } from 'rxjs/operators';
-
-import { AppState } from '../reducers';
 
 const ACTION_PREFIX = '[Form]';
 export class GetUserEmail implements Action {
@@ -63,7 +61,7 @@ export class FormEffects {
   login$: Observable<Action> = this.actions.pipe(
     filter(action => action instanceof GetUserEmail),
     map((action: GetUserEmail) => action),
-    mergeMap(action =>
+    mergeMap(_action =>
       this.http.post('http://faker.hook.io/?property=internet.email', {}).pipe(
         // If successful, dispatch success action with result
         map((data: string) => new SetUserEmail(data)),
