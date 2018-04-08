@@ -1,0 +1,9 @@
+<span>user: {{user|async}}</span>
+<div *ngIf="form|async as form"><button type="button" (click)="getUser()">Get user</button>
+  <form novalidate [ngrxFormState]=(form)>
+    <label>Email:</label>
+    <input type="text" [ngrxFormControlState]="form.controls.email">
+    <button type="button" (click)="newEmail()">New email</button>
+  </form>
+  <pre [innerHtml]="form | prettyjson"></pre>
+</div>
