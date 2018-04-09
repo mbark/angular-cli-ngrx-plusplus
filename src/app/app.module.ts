@@ -15,6 +15,7 @@ import { NgrxQueryModule } from 'ngrx-query';
 
 import { AppComponent } from './app.component';
 import { FormComponent } from './form/form.component';
+import { LogService } from './log.service';
 import { FormEffects } from './modules/form';
 import { NotfoundComponent } from './notfound/notfound.component';
 import {
@@ -49,7 +50,10 @@ import { routes } from './routes';
       entitiesSelector: entitiesSelector,
     }),
   ],
-  providers: [{ provide: RouterStateSerializer, useClass: CustomSerializer }],
+  providers: [
+    { provide: RouterStateSerializer, useClass: CustomSerializer },
+    LogService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

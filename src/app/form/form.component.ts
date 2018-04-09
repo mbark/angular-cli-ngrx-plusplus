@@ -5,6 +5,7 @@ import { ConnectService } from 'ngrx-query';
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
 
+import { LogService } from '../log.service';
 import { FormState, GetUserEmail } from '../modules/form';
 import { createFakerQuery } from '../queries';
 import { AppState } from '../reducers';
@@ -21,7 +22,8 @@ export class FormComponent implements OnInit {
 
   constructor(
     private store: Store<AppState>,
-    private connectService: ConnectService
+    private connectService: ConnectService,
+    private log: LogService
   ) {
     this.form = store.select(s => s.form);
     this.user = store.pipe(
@@ -31,6 +33,7 @@ export class FormComponent implements OnInit {
   }
 
   public ngOnInit() {
+    this.log.info('ngOnInit: FormComponent');
     this.store.dispatch(new GetUserEmail());
   }
 

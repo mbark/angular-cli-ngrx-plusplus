@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 import { PrettyJsonModule } from 'angular2-prettyjson';
 
+import { LogService } from '../log.service';
 import { FormComponent } from './form.component';
 
 describe('FormComponent', () => {
@@ -12,6 +13,7 @@ describe('FormComponent', () => {
       TestBed.configureTestingModule({
         imports: [PrettyJsonModule],
         declarations: [FormComponent],
+        providers: [LogService],
       }).compileComponents();
     })
   );
