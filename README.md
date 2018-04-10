@@ -2,6 +2,17 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
 
+## getting started
+1. Check your `node` version (it was developed with `9.5.0`), to manage node
+   versions `nvm` is recommended, see [installation instructions here for
+   Windows](https://github.com/coreybutler/nvm-windows);
+2. Install `yarn`, see [installation instructions](https://yarnpkg.com/lang/en/docs/install/);
+3. Run `yarn install` to install all dependencies.
+
+You should now be able to start the server with `yarn start` and navigate to
+[`http://localhost:4200`](http://localhost:4200). To run the tests just run
+`yarn test` or start a watch-process with `yarn test --watch`.
+
 ## ngrx
 
 `ngrx` is used for state management, additionally the following packages are used:
